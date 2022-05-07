@@ -22,11 +22,21 @@ module.exports.getGallery = async (req, res, next) => {
 
 module.exports.deleteGallery = async (req, res) => {
   try {
-    const _id = req.params.id;
-    const deleteGallery = await Gallery.findByIdAndDelete({ _id });
-    res.json(deleteGallery);
+    const { id } = req.params;
+    const response = await Gallery.findByIdAndDelete({ _id: id });
+    res.json(response);
   } catch (error) {
     res.status(500).json(error);
     console.log(error);
+  }
+};
+
+module.exports.getByFaculty = async (req, res) => {
+  const { faculty } = req.params;
+  try {
+    const response = await Gallery.find({ faculty });
+    res.json(response);
+  } catch (error) {
+    res.json(error.message);
   }
 };

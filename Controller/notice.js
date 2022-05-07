@@ -1,12 +1,12 @@
 const Notice = require("../Model/notice.js");
 
-module.exports.postNotice = async (req, res, next) => {
+module.exports.postNotice = async (req, res) => {
   const newNotice = new Notice(req.body);
   try {
     const insertNotice = await newNotice.save();
     res.status(201).json(insertNotice);
   } catch (error) {
-    res.status(400).json(error);
+    res.status(400).json(error.message);
     console.log(error);
   }
 };
