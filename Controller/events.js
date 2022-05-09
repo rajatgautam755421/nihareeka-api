@@ -22,8 +22,8 @@ module.exports.getEvents = async (req, res, next) => {
 
 module.exports.deleteEvents = async (req, res) => {
   try {
-    const _id = req.params.id;
-    const deleteEvents = await Events.findByIdAndDelete({ _id });
+    const { id } = req.params;
+    const deleteEvents = await Events.findByIdAndDelete({ _id: id });
     res.json(deleteEvents);
   } catch (error) {
     res.status(500).json(error);

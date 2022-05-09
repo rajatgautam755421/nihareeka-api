@@ -6,6 +6,10 @@ const resultSchema = new Schema(
       type: String,
       required: true,
     },
+    faculty: {
+      type: String,
+      required: true,
+    },
     link: {
       type: String,
       required: true,
