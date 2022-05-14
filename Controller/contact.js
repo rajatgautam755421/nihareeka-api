@@ -11,7 +11,7 @@ module.exports.postContact = async (req, res, next) => {
   });
 };
 module.exports.getContact = catchAsyncErrors(async (req, res, next) => {
-  const getContact = await Contact.find();
+  const getContact = await Contact.find().sort({ createdAt: -1 });
   res.status(200).json({
     success: true,
     count: getContact.length,
