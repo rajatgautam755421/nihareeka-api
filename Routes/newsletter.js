@@ -7,7 +7,7 @@ router.get("/newsletter", newsletter.getNewsletter);
 router.delete("/newsletter/:id", newsletter.deleteNewsletter);
 
 router.post("/notification", async (req, res) => {
-  const response = await NotificationModel.create();
+  const response = await NotificationModel.create(req.body);
   res.json(response);
 });
 
