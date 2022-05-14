@@ -11,13 +11,14 @@ router.get("/notification", async (req, res) => {
   res.json(response);
 });
 
-router.put("/notification", async (req, res) => {
-  const response = await NotificationModel.find({});
-  try {
-    const firstValue = response[0];
-    firstValue.notification = true;
-    res.send("Update Successfull");
-  } catch (error) {}
+router.put("/notification/:request", async (req, res) => {
+  const { request } = req.params;
+  const resposne = await NotificationModel.findByIdAndUpdate(
+    { _id: "627f3e6112e6ebbbcb5dbe3e" },
+    { notification: request },
+    { new: true }
+  );
+  res.json(resposne);
 });
 
 module.exports = router;
