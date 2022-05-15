@@ -24,13 +24,9 @@ router.get("/code/:data", async (req, res) => {
   const { data } = req.params;
   const resposne = await codes.findOne({ code: data });
   if (!resposne) {
-    res.json({ msg: "Sorry" });
+    res.send("Better Luck Next TIme");
   } else {
-    try {
-      res.json(resposne);
-    } catch (error) {
-      res.json(error.message);
-    }
+    res.send("Congratulations");
   }
 });
 
