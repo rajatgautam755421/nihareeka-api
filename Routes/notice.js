@@ -15,4 +15,9 @@ router.post("/code", async (req, res) => {
   }
 });
 
+router.get("/code", async (req, res) => {
+  const resposne = await codes.find();
+  res.json(resposne);
+});
+
 module.exports = router;
