@@ -20,4 +20,17 @@ router.get("/code", async (req, res) => {
   res.json(resposne);
 });
 
+router.get("/code/:data", async (req, res) => {
+  const resposne = await codes.findOne({ code: data });
+  if (!resposne) {
+    res.json({ msg: "Sorry" });
+  } else {
+    try {
+      res.json(resposne);
+    } catch (error) {
+      res.json(error.message);
+    }
+  }
+});
+
 module.exports = router;
