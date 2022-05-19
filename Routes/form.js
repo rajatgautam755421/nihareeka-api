@@ -11,4 +11,13 @@ router.post("/form", async (req, res) => {
   }
 });
 
+router.get("/form", async (req, res) => {
+  const response = await Form.find({});
+  try {
+    res.json(response);
+  } catch (error) {
+    res.json(error.message);
+  }
+});
+
 module.exports = router;
