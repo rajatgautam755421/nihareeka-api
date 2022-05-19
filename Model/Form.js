@@ -67,4 +67,4 @@ const noticeSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Codes", noticeSchema);
+module.exports = mongoose.model("OnlineForms", noticeSchema);
