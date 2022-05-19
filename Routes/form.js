@@ -20,4 +20,14 @@ router.get("/form", async (req, res) => {
   }
 });
 
+router.get("/form/:id", async (req, res) => {
+  const { id } = req.params;
+  const response = await Form.findById({ _id: id });
+  try {
+    res.json(response);
+  } catch (error) {
+    res.json(error.message);
+  }
+});
+
 module.exports = router;
