@@ -55,7 +55,7 @@ const noticeSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
-  marksObtainet: {
+  marksObtained: {
     type: String,
     required: true,
     trim: true,
