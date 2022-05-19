@@ -74,6 +74,12 @@ const noticeSchema = new mongoose.Schema({
     required: [true, "tumarks Is Required"],
     trim: true,
   },
+  acceptence: {
+    type: String,
+    required: [true, "tumarks Is Required"],
+    trim: true,
+    default: "",
+  },
 });
 
-module.exports = mongoose.model("OnlineForms", noticeSchema);
+module.exports = mongoose.model("OnlineAdmissionForms", noticeSchema);
