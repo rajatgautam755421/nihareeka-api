@@ -2,67 +2,76 @@ const mongoose = require("mongoose");
 const noticeSchema = new mongoose.Schema({
   firstName: {
     type: String,
-    required: true,
+    required: [true, "firstName Is Required"],
     trim: true,
   },
   middleName: {
     type: String,
-    required: true,
+    required: [true, "middlename Is Required"],
     trim: true,
   },
   lastname: {
     type: String,
-    required: true,
+    required: [true, "lastname Is Required"],
     trim: true,
   },
   fatherName: {
     type: String,
-    required: true,
+    required: [true, "fathername Is Required"],
     trim: true,
   },
   motherName: {
     type: String,
-    required: true,
+    required: [true, "mothername Is Required"],
+    trim: true,
+  },
+  dateOfBirth: {
+    type: String,
+    required: [true, "dob Is Required"],
     trim: true,
   },
   nationality: {
     type: String,
-    required: true,
+    required: [true, "nationality Is Required"],
     trim: true,
   },
   permanentAddress: {
     type: String,
-    required: true,
+    required: [true, "pa Is Required"],
     trim: true,
   },
   temporaryAddress: {
     type: String,
-    required: true,
+    required: [true, "ta Is Required"],
     trim: true,
   },
   sc: {
     type: String,
-    required: true,
+    required: [true, "sc Is Required"],
     trim: true,
   },
   contactNumber: {
     type: String,
-    required: true,
+    required: [true, "number Is Required"],
     trim: true,
   },
   email: {
     type: String,
-    required: true,
+    required: [true, "email Is Required"],
     trim: true,
+  },
+  faculty: {
+    type: String,
+    required: [true, "faculty Is Required"],
   },
   marksObtained: {
     type: String,
-    required: true,
+    required: [true, "marks Is Required"],
     trim: true,
   },
   tuMarks: {
     type: String,
-    required: true,
+    required: [true, "tumarks Is Required"],
     trim: true,
   },
 });
