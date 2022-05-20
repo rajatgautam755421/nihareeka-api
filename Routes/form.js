@@ -30,4 +30,18 @@ router.get("/form/:id", async (req, res) => {
   }
 });
 
+router.get("/form/update/:id/:state", async (req, res) => {
+  const { id } = req.params;
+  const { state } = req.params;
+  const response = await Form.findByIdAndUpdate(
+    { _id: id },
+    { acceptence: state }
+  );
+  try {
+    res.json(response);
+  } catch (error) {
+    res.json(error.message);
+  }
+});
+
 module.exports = router;
