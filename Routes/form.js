@@ -92,4 +92,15 @@ router.get("/mail/accept/:email/:message", async (req, res) => {
   }
 });
 
+router.get("/mail/reject/:email/:message", async (req, res) => {
+  const { email } = req.params;
+  const { message } = req.params;
+  try {
+    sendMail(email, message);
+    res.json("Email Sent Successfully");
+  } catch (error) {
+    res.json(error.message);
+  }
+});
+
 module.exports = router;
