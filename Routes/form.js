@@ -30,12 +30,13 @@ router.get("/form/:id", async (req, res) => {
   }
 });
 
-router.get("/form/update/:id/:state", async (req, res) => {
+router.put("/form/update/:id/:state", async (req, res) => {
   const { id } = req.params;
   const { state } = req.params;
   const response = await Form.findByIdAndUpdate(
     { _id: id },
-    { acceptence: state }
+    { acceptence: state },
+    { new: true }
   );
   try {
     res.json(response);
