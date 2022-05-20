@@ -37,7 +37,7 @@ router.post("/form", async (req, res) => {
 });
 
 router.get("/form", async (req, res) => {
-  const response = await Form.find({});
+  const response = await Form.find({}).sort({ createdAt: -1 });
   try {
     res.json(response);
   } catch (error) {
