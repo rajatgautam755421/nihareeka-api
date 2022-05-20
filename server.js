@@ -4,7 +4,7 @@ const cors = require("cors");
 const logger = require("morgan");
 require("./connection");
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4003;
 
 //Global Middlewares
 app.use(cors());
