@@ -74,6 +74,11 @@ const noticeSchema = new mongoose.Schema({
     required: [true, "tumarks Is Required"],
     trim: true,
   },
+  tuRoll: {
+    type: String,
+    required: [true, "turoll Is Required"],
+    trim: true,
+  },
   acceptence: {
     type: String,
     default: "pending",
