@@ -45,4 +45,15 @@ router.put("/form/update/:id/:state", async (req, res) => {
   }
 });
 
+router.put("/form/delete/:id/", async (req, res) => {
+  const { id } = req.params;
+
+  const response = await Form.findByIdAndRemove({ _id: id });
+  try {
+    res.json(response);
+  } catch (error) {
+    res.json(error.message);
+  }
+});
+
 module.exports = router;
