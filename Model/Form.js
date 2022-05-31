@@ -8,7 +8,6 @@ const noticeSchema = new mongoose.Schema(
     },
     middleName: {
       type: String,
-      required: [true, "middlename Is Required"],
       trim: true,
     },
     lastname: {
@@ -70,14 +69,17 @@ const noticeSchema = new mongoose.Schema(
       required: [true, "marks Is Required"],
       trim: true,
     },
+    typeOfForm: {
+      type: String,
+      trim: true,
+      required: [true, "Form Type is Required"],
+    },
     tuMarks: {
       type: String,
-      required: [true, "tumarks Is Required"],
       trim: true,
     },
     tuRoll: {
       type: String,
-      required: [true, "turoll Is Required"],
       trim: true,
     },
     acceptence: {
