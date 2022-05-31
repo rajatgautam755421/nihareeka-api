@@ -69,8 +69,8 @@ const noticeSchema = new mongoose.Schema(
       required: [true, "marks Is Required"],
       trim: true,
     },
-    typeOfForm: {
-      type: String,
+    value: {
+      type: Boolean,
       trim: true,
       required: [true, "Form Type is Required"],
     },
